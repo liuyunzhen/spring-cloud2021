@@ -1,0 +1,30 @@
+package com.fox.springcloud.controller;
+
+import com.fox.springcloud.entity.CommonResult;
+import com.fox.springcloud.entity.Payment;
+import com.fox.springcloud.service.PaymentService;
+import com.fox.springcloud.utils.ResultUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+@Slf4j
+@RestController
+public class PaymentController {
+    @Resource
+    private PaymentService paymentService;
+
+    @PostMapping("/payment/save")
+    public CommonResult save(Payment payment){
+        return ResultUtil.success(paymentService.insert(payment));
+    }
+
+    @GetMapping("/payment/get")
+    public CommonResult selectPaymentById(Long id){
+        log.info("===================");
+        return ResultUtil.success(paymentService.selectPaymentById(id));
+    }
+}
