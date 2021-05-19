@@ -7,6 +7,7 @@ import com.fox.springcloud.utils.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -18,7 +19,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/payment/save")
-    public CommonResult save(Payment payment){
+    public CommonResult save(@RequestBody Payment payment){
         return ResultUtil.success(paymentService.insert(payment));
     }
 
