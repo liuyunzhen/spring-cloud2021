@@ -11,6 +11,7 @@
     <module>cloud-consumer-order80</module>
     <module>cloud-api-common</module>
     <module>payment8001</module>
+    <module>cloud-eureka-server7001</module>
   </modules>
   <!-- 第一步 打包方式pom-->
   <packaging>pom</packaging>
