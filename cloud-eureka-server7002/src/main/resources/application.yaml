@@ -6,7 +6,7 @@ server:
 #  client:
 #    register-with-eureka: false
 #    fetch-registry: false
-#    service-url:
+#    com.fox.springcloud.service-url:
 #      defaultzone: http://eureka7001.com:7001/eureka/
 eureka:
   instance:

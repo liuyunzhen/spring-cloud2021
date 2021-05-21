@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    private static final String preffix_url = "http://localhost:8001";
+    private static final String preffix_url = "http://PAYMENT-SERVICE";
 
     @Resource
     private RestTemplate restTemplate;
