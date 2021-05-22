@@ -6,18 +6,23 @@ import com.fox.springcloud.service.PaymentService;
 import com.fox.springcloud.utils.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Slf4j
 @RestController
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @Value("${server.port}")
     private String port;
@@ -32,5 +37,18 @@ public class PaymentController {
     public CommonResult selectPaymentById(Long id){
         log.info("===================port:{}", port);
         return ResultUtil.success(paymentService.selectPaymentById(id));
+    }
+
+    @GetMapping("/payment/discovery")
+    public Object discovery(){
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info("****service:{}", service);
+        }
+        List<ServiceInstance> instances = discoveryClient.getInstances("PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getInstanceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+        }
+        return discoveryClient;
     }
 }
