@@ -33,4 +33,9 @@ public class PaymentController {
         log.info("===================port:{}", port);
         return ResultUtil.success(paymentService.selectPaymentById(id));
     }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return port;
+    }
 }
