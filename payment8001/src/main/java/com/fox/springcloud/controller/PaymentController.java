@@ -56,4 +56,14 @@ public class PaymentController {
     public String getPaymentLB(){
         return port;
     }
+
+    @GetMapping("/payment/timeout")
+    public String getTimeout(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            log.error("线程休眠出错:{}", e);
+        }
+        return port;
+    }
 }

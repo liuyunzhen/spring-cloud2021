@@ -9,4 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface PaymentFeignService {
     @GetMapping("/payment/lb")
     public String getPaymentLB();
+
+    @GetMapping("/payment/timeout")
+    public String getTimeout();
 }
