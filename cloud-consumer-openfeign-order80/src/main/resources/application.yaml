@@ -12,6 +12,10 @@ feign:
       default:
         ReadTimeout: 5000
         ConnectTimeout: 5000
+logging:
+  level:
+    com.fox.springcloud.service.PaymentFeignService: debug
+
 
 
 
