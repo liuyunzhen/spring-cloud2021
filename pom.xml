@@ -19,6 +19,8 @@
       <module>consul-payment-8006</module>
       <module>cloud-consumer-orderconsul80</module>
       <module>cloud-consumer-openfeign-order80</module>
+      <module>hystrix-payment8008</module>
+      <module>cloud-hystrix-openfeign-order80</module>
   </modules>
   <!-- 第一步 打包方式pom-->
   <packaging>pom</packaging>
