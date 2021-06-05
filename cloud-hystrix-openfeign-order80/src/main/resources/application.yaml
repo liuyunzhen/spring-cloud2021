@@ -6,6 +6,24 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        ReadTimeout: 15000
+        ConnectTimeout: 15000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000 # 设置hystrix的超时时间为5000ms
+
+
+
 
 
 
