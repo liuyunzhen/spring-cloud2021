@@ -13,14 +13,14 @@ feign:
     config:
       default:
         ReadTimeout: 15000
-        ConnectTimeout: 15000
+        ConnectTimeout: 15000    #设置ribbon超时时间
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 15000 # 设置hystrix的超时时间为5000ms
+            timeoutInMilliseconds: 15000 # 设置hystrix的超时时间
 
 
 
