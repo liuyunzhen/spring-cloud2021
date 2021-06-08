@@ -16,6 +16,10 @@ spring:
     gateway:
       routes:
         - id: payment-service_route
-          uri: http://localhost:8001
+#          uri: http://localhost:8001
+          uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payment/**
+      discovery:
+        locator:
+          enabled: true
