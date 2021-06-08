@@ -22,6 +22,7 @@
       <module>hystrix-payment8008</module>
       <module>cloud-hystrix-openfeign-order80</module>
       <module>cloud-consumer-hystrix-dashboard9001</module>
+      <module>cloud-gateway-gateway9527</module>
   </modules>
   <!-- 第一步 打包方式pom-->
   <packaging>pom</packaging>
