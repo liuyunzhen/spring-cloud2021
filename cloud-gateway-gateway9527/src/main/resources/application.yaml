@@ -20,6 +20,7 @@ spring:
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payment/**
+            - After=2021-06-11T21:12:31.512+08:00[Asia/Shanghai]
       discovery:
         locator:
           enabled: true
