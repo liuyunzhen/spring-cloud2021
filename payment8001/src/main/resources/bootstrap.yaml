@@ -27,3 +27,8 @@ eureka:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.fox.springcloud.entities
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
