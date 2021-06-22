@@ -32,6 +32,9 @@ public class PaymentController {
     @Value("${eureka.client.service-url.defaultZone}")
     private String eurekaUrl;
 
+    @Value("${config.info}")
+    private String configInfo;
+
     @PostMapping("/payment/save")
     public CommonResult save(@RequestBody Payment payment){
         log.info("===================port:{}", port);
@@ -75,5 +78,10 @@ public class PaymentController {
     @GetMapping("/payment/eurekaUrl")
     public String getEurekaUrl(){
         return eurekaUrl;
+    }
+
+    @GetMapping("/payment/configInfo")
+    public String configInfo(){
+        return configInfo;
     }
 }

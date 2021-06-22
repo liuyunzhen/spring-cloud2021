@@ -12,7 +12,7 @@ spring:
       password: 123456
   cloud:
     config:
-      label: main
+      label: master
       name: config
       profile: dev
       uri: http://localhost:3344
