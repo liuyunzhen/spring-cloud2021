@@ -19,6 +19,7 @@ public class MessageProviderImpl implements MessageProvider {
     public String send() {
         String uuid = UUID.randomUUID().toString();
         output.send(MessageBuilder.withPayload(uuid).build());
+        System.out.println("生产者输出消息:" + uuid);
         return null;
     }
 }
