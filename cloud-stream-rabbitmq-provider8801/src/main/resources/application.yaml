@@ -15,11 +15,11 @@ spring:
                   port: 5672
                   username: guest
                   password: guest
-        bindings: # 服务的整合处理
-          output: # 通道的名字
-            destination: studyExchange # 表示要使用的Exchange名称定义
-            content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
-            binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+      bindings: # 服务的整合处理
+        output: # 通道的名字
+          destination: studyExchange # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+          binder: defaultRabbit # 设置要绑定的消息服务的具体设置
 eureka:
   client:
     register-with-eureka: true
