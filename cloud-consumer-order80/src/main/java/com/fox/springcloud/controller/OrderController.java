@@ -63,4 +63,9 @@ public class OrderController {
             return restTemplate.getForObject(uri + "/payment/lb", String.class);
         }
     }
+
+    @RequestMapping("/custmer/payment/zipkin")
+    public String paymentZipkin(){
+        return restTemplate.getForObject(preffix_url + "/payment/zipkin", String.class);
+    }
 }
