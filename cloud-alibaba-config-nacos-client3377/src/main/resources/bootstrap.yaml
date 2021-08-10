@@ -10,3 +10,5 @@ spring:
       config:
         server-addr: 192.168.137.200:8848
         file-extension: yaml
+        namespace: 1cc2efde-f857-49ea-a7ac-01c5fa911e59
+        group: groupA
