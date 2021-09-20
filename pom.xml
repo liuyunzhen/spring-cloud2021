@@ -32,6 +32,9 @@
       <module>cloud-alibaba-consumer-nacos-order83</module>
       <module>cloud-alibaba-config-nacos-client3377</module>
       <module>cloud-alibaba-sentinel</module>
+      <module>cloud-alibaba-provider-ribbon-payment9003</module>
+    <module>cloud-alibaba-provider-ribbon-payment9004</module>
+      <module>cloud-alibaba-consumer-nacos-order84</module>
   </modules>
   <!-- 第一步 打包方式pom-->
   <packaging>pom</packaging>
