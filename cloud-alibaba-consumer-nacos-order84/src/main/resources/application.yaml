@@ -16,3 +16,7 @@ spring:
 # 消费者将要去访问的微服务名称(注册进nacos的微服务提供者
 service-url:
   nacos-user-service: http://nacos-ribbon-provider
+# Feign开启sentinel支持
+feign:
+  sentinel:
+    enabled: true

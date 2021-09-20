@@ -12,6 +12,9 @@ public class EchoController {
 
     @GetMapping(value = "/echo/{id}")
     public String echo(@PathVariable Long id) {
+        if (id == 4){
+            throw new IllegalArgumentException("IllegalArgumentException 非法参数异常。。。");
+        }
         return "Hello Nacos Discovery " + serverPort + ",id:" + id;
     }
 }
